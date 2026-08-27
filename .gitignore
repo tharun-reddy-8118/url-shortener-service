@@ -1,73 +1,7 @@
-# =========================
-# Python
-# =========================
-
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-
-# =========================
-# Virtual Environment
-# =========================
-
 .venv/
-venv/
-env/
-ENV/
-
-# =========================
-# Environment Variables
-# =========================
-
+__pycache__/
 .env
-.env.*
-!.env.example
-
-# =========================
-# IDE / Editors
-# =========================
-
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# =========================
-# OS Files
-# =========================
-
-.DS_Store
-Thumbs.db
-
-# =========================
-# Testing / Coverage
-# =========================
-
 .pytest_cache/
-.coverage
-htmlcov/
-.coverage.*
-.cache/
-
-# =========================
-# Build / Distribution
-# =========================
-
-build/
-dist/
-*.egg-info/
-
-# =========================
-# Logs
-# =========================
-
-*.log
-
-# =========================
-# Local Database Files
-# =========================
-
-*.db
-*.sqlite
-*.sqlite3
+.mypy_cache/
+.idea/
+.vscode/
