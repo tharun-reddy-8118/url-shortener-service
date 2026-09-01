@@ -11,8 +11,8 @@ interface UrlListProps {
 export function UrlList({ urls, onUpdate, onViewHistory }: UrlListProps) {
   if (urls.length === 0) {
     return (
-      <div className="bg-white dark:bg-slate-900/40 dark:backdrop-blur-xl rounded-2xl border border-slate-200 dark:border-white/10 p-16 text-center shadow-sm dark:shadow-xl transition-colors duration-300">
-        <div className="mx-auto w-20 h-20 bg-slate-100 dark:bg-slate-800/80 text-slate-800 dark:text-blue-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm dark:shadow-inner border border-slate-200 dark:border-white/5 transition-colors">
+      <div className="clay-card p-16 text-center transition-colors duration-300 bg-white dark:bg-slate-800/50">
+        <div className="mx-auto w-20 h-20 clay-input text-slate-800 dark:text-blue-400 flex items-center justify-center mb-6 transition-colors">
           <Link2 size={36} />
         </div>
         <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight transition-colors">No shortened URLs yet</h3>

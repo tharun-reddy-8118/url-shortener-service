@@ -60,14 +60,14 @@ export function Login() {
       </div>
 
       {/* Right side - Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center bg-white dark:bg-slate-950/50 p-8 sm:p-12 relative z-10 border-l border-slate-200 dark:border-white/5 transition-colors duration-300">
-        <div className="w-full max-w-md space-y-8">
-          <div className="lg:hidden flex items-center gap-2 text-slate-900 dark:text-white font-bold text-2xl tracking-tight mb-8 transition-colors">
+      <div className="w-full lg:w-1/2 flex items-center justify-center bg-slate-100 dark:bg-slate-900 p-8 sm:p-12 relative z-10 transition-colors duration-300">
+        <div className="w-full max-w-md space-y-8 clay-card p-8 sm:p-10 bg-white dark:bg-slate-800/50">
+          <div className="lg:hidden flex justify-center items-center gap-2 text-slate-900 dark:text-white font-bold text-2xl tracking-tight mb-8 transition-colors">
             <Link2 size={28} className="text-blue-500" />
             <span>ShortLink</span>
           </div>
           
-          <div>
+          <div className="text-center">
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight transition-colors">Sign in</h2>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 transition-colors">
               Don't have an account?{' '}
@@ -80,42 +80,40 @@ export function Login() {
           <form className="space-y-6 mt-8" onSubmit={handleSubmit}>
             {error && <ErrorMessage message={error} />}
             
-            <div className="space-y-1">
-              <label htmlFor="username" className="block text-sm font-medium text-slate-700 dark:text-slate-300 transition-colors">
-                Username
-              </label>
-              <input
-                id="username"
-                name="username"
-                type="text"
-                required
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className="block w-full px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-blue-500 focus:border-transparent transition-all sm:text-sm"
-                placeholder="Enter your username"
-              />
-            </div>
+            <div className="space-y-4">
+              <div>
+                <label htmlFor="username" className="sr-only">Username</label>
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  required
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className="clay-input block w-full px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all sm:text-sm"
+                  placeholder="Enter your username"
+                />
+              </div>
 
-            <div className="space-y-1">
-              <label htmlFor="password" className="block text-sm font-medium text-slate-700 dark:text-slate-300 transition-colors">
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="block w-full px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-blue-500 focus:border-transparent transition-all sm:text-sm"
-                placeholder="Enter your password"
-              />
+              <div>
+                <label htmlFor="password" className="sr-only">Password</label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="clay-input block w-full px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all sm:text-sm"
+                  placeholder="Enter your password"
+                />
+              </div>
             </div>
 
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex justify-center items-center gap-2 py-3 px-4 border border-transparent rounded-xl shadow-sm dark:shadow-[0_0_15px_rgba(59,130,246,0.3)] text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900 dark:focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              className="clay-primary w-full flex justify-center items-center gap-2 py-3 px-4 rounded-[1rem] text-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-all"
             >
               {isLoading ? (
                 <>

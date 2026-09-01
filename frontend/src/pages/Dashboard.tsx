@@ -88,16 +88,19 @@ export function Dashboard() {
               title="Total Links" 
               value={urls.length} 
               icon={<Link size={22} />} 
+              bgClass="bg-blue-50/70 dark:bg-blue-900/10"
             />
             <StatsCard 
               title="Active Links" 
               value={activeUrls} 
               icon={<CheckCircle size={22} />} 
+              bgClass="bg-emerald-50/70 dark:bg-emerald-900/10"
             />
             <StatsCard 
               title="Inactive Links" 
               value={urls.length - activeUrls} 
               icon={<MousePointerClick size={22} />} 
+              bgClass="bg-amber-50/70 dark:bg-amber-900/10"
             />
           </div>
 

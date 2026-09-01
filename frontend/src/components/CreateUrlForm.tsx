@@ -27,7 +27,7 @@ export function CreateUrlForm({ onSuccess }: { onSuccess: () => void }) {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-900/40 dark:backdrop-blur-xl rounded-2xl border border-slate-200 dark:border-white/10 p-8 shadow-sm dark:shadow-xl transition-colors duration-300">
+    <div className="clay-card p-8 transition-colors duration-300 bg-indigo-50/30 dark:bg-slate-800/50">
       <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-6 tracking-tight transition-colors">Create a new short link</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="flex flex-col sm:flex-row gap-4">
@@ -41,14 +41,14 @@ export function CreateUrlForm({ onSuccess }: { onSuccess: () => void }) {
               placeholder="https://example.com/very-long-url-that-needs-shortening"
               value={originalUrl}
               onChange={(e) => setOriginalUrl(e.target.value)}
-              className="block w-full pl-11 pr-4 py-3 bg-slate-50 dark:bg-slate-950/50 border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-blue-500 focus:border-transparent transition-all sm:text-sm shadow-none dark:shadow-inner"
+              className="clay-input block w-full pl-11 pr-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all sm:text-sm"
               disabled={isLoading}
             />
           </div>
           <button
             type="submit"
             disabled={isLoading || !originalUrl}
-            className="inline-flex justify-center items-center px-8 py-3 border border-transparent text-sm font-semibold rounded-xl shadow-sm dark:shadow-[0_0_15px_rgba(59,130,246,0.3)] text-white bg-slate-900 hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900 dark:focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap transition-all"
+            className="clay-primary inline-flex justify-center items-center px-8 py-3 text-sm font-semibold rounded-[1rem] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap transition-all"
           >
             {isLoading ? (
               <>

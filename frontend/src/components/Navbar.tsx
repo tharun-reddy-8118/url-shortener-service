@@ -13,7 +13,7 @@ export function Navbar({ user }: { user: User | null }) {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/50 backdrop-blur-xl border-b border-slate-200 dark:border-white/5 transition-colors duration-300">
+    <nav className="sticky top-0 z-50 clay-card rounded-none border-t-0 border-x-0 border-b border-slate-300/50 dark:border-white/5 transition-colors duration-300 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
@@ -26,7 +26,7 @@ export function Navbar({ user }: { user: User | null }) {
           <div className="flex items-center gap-4 sm:gap-6">
             <button
               onClick={toggleTheme}
-              className="p-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/50 dark:hover:bg-slate-700/50 rounded-lg transition-all"
+              className="clay-btn p-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
@@ -39,7 +39,7 @@ export function Navbar({ user }: { user: User | null }) {
                 </span>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-slate-800/50 rounded-lg transition-all"
+                  className="clay-btn flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                 >
                   <LogOut size={16} />
                   <span className="hidden sm:inline">Logout</span>

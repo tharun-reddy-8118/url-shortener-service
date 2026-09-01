@@ -50,7 +50,7 @@ export function UrlCard({ url, onUpdate, onViewHistory }: UrlCardProps) {
   };
 
   return (
-    <div className={`bg-white dark:bg-slate-900/40 dark:backdrop-blur-xl rounded-2xl border p-6 transition-all duration-300 ${!url.is_active ? 'border-slate-100 dark:border-white/5 opacity-60' : 'border-slate-200 dark:border-white/10 shadow-sm hover:shadow-md dark:shadow-xl hover:border-slate-300 dark:hover:bg-slate-800/40 dark:hover:border-white/20'}`}>
+    <div className={`clay-card p-6 transition-all duration-300 bg-white dark:bg-slate-800/50 ${!url.is_active ? 'opacity-60 grayscale' : 'hover:-translate-y-1'}`}>
       <div className="flex justify-between items-start mb-5">
         <div className="flex-grow pr-4">
           <div className="flex items-center gap-3 mb-2">
@@ -71,7 +71,7 @@ export function UrlCard({ url, onUpdate, onViewHistory }: UrlCardProps) {
         </div>
         
         <div className="flex flex-col items-end">
-          <div className="bg-slate-50 dark:bg-slate-950/50 border border-slate-100 dark:border-white/5 px-4 py-3 rounded-xl text-center min-w-[90px] shadow-none dark:shadow-inner transition-colors">
+          <div className="clay-input px-4 py-3 text-center min-w-[90px] transition-colors">
             <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1">Clicks</p>
             <p className="text-2xl font-bold text-slate-900 dark:text-white transition-colors">
               {clicks !== null ? clicks : <Loader2 size={20} className="animate-spin mx-auto text-slate-400 dark:text-slate-600" />}
@@ -80,11 +80,11 @@ export function UrlCard({ url, onUpdate, onViewHistory }: UrlCardProps) {
         </div>
       </div>
 
-      <div className="flex items-center justify-between pt-5 border-t border-slate-100 dark:border-white/5 transition-colors">
+      <div className="flex items-center justify-between pt-5 border-t border-slate-300/30 dark:border-white/5 transition-colors">
         <div className="flex items-center gap-3">
           <button
             onClick={handleCopy}
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 dark:hover:text-white transition-all hover:shadow-sm"
+            className="clay-btn inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all"
           >
             {isCopied ? <CheckCircle size={16} className="text-emerald-500 dark:text-emerald-400" /> : <Copy size={16} />}
             {isCopied ? 'Copied!' : 'Copy'}
@@ -92,7 +92,7 @@ export function UrlCard({ url, onUpdate, onViewHistory }: UrlCardProps) {
           
           <button
             onClick={() => onViewHistory(url.id)}
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-900 dark:text-blue-400 bg-slate-100 dark:bg-blue-500/10 border border-transparent dark:border-blue-500/20 rounded-lg hover:bg-slate-200 dark:hover:bg-blue-500/20 dark:hover:text-blue-300 transition-all hover:shadow-sm"
+            className="clay-btn inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all"
           >
             <BarChart2 size={16} />
             Analytics
@@ -102,10 +102,10 @@ export function UrlCard({ url, onUpdate, onViewHistory }: UrlCardProps) {
         <button
           onClick={handleToggleStatus}
           disabled={isToggling}
-          className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg transition-all hover:shadow-sm ${
+          className={`clay-btn inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold transition-all ${
             url.is_active 
-              ? 'text-red-700 dark:text-red-400 bg-red-50 dark:bg-red-500/10 hover:bg-red-100 dark:hover:bg-red-500/20 border border-red-100 dark:border-red-500/20' 
-              : 'text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 hover:bg-emerald-100 dark:hover:bg-emerald-500/20 border border-emerald-100 dark:border-emerald-500/20'
+              ? 'text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300' 
+              : 'text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300'
           }`}
         >
           {isToggling ? (
